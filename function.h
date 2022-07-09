@@ -4,7 +4,7 @@
 
 void createCandidate(){
   printf("\n Creat candidates);
-         
+         }
          
          
          
