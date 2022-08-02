@@ -11,7 +11,7 @@ int main()
     int main_exit;
     int i, c;
     char pass[10], password[10] = "codewithc";
-    main:
+main:
     system("cls");
     system("color 9");
     printf("\n\n\t\tEnter the password to login: ");
@@ -32,7 +32,7 @@ int main()
     else
     {
         printf("\n\nWrong password!!\a\a\a");
-        login_try:
+    login_try:
         printf("\nEnter 1 to try again and 0 to exit: ");
         scanf("%d", &main_exit);
         if (main_exit == 1)

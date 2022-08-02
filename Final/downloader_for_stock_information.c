@@ -5,7 +5,7 @@
 
 // Using curl to download the webpage
 
-void downloader_for_stock_information()
+void main()
 {
     // DECLARATION OF VARIABLES
     CURL *curl;
@@ -29,19 +29,18 @@ void downloader_for_stock_information()
 
     // To see if the program opened sucessfully
     result = curl_easy_perform(curl);
-    if (result == 1)
-    {
-        printf("Download sucessful!\n");
-    }
-    else
-    {
-        printf("ERROR: %s\n", curl_easy_strerror(result));
-    }
+    // if (result == 1)
+    // {
+    //     printf("Download sucessful!\n");
+    // }
+    // else
+    // {
+    //     printf("ERROR: %s\n", curl_easy_strerror(result));
+    // }
     // Here CURDLE_OK means the download is sucessful
     // We can substitute CURDLE_OK by 1
 
-    //Closing files and curl
+    // Closing files and curl
     fclose(fp);
     curl_easy_cleanup(curl);
 }
-
