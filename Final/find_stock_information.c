@@ -44,13 +44,13 @@ void find_stock_information()
     int i = 0;
 
     // Don't mind the folowing three comments. They are just for testing.
-    system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
-    system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
-    system("downloader_for_stock_information");
+    // system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
+    // system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
+    // system("downloader_for_stock_information");
 
     // User Inputs
     {
-        printf("Enter the code of the stock you want to see: ");
+        printf("\nEnter the code of the stock you want to see: ");
         scanf("%s", stock_code);
         to_upper_case(stock_code);
         stock_code_len = strlen(stock_code);

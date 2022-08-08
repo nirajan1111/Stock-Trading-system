@@ -28,7 +28,7 @@ choice_enter:
     printf("\n\t\t1. Name of All Stocks");
     printf("\n\t\t2. Stock Information");
     printf("\n\t\t3. Follow a stock");
-    printf("\n\t\t4. Function 4");
+    printf("\n\t\t4. About Us");
     printf("\n\t\t5. Exit");
     printf("\n\n\n\n\n\t\t Enter your choice: ");
     scanf("%d", &choice);
@@ -55,6 +55,9 @@ choice_enter:
         break;
 
     case 2:
+        system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
+        system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
+        system("downloader_for_stock_information");
         find_stock_information:
         find_stock_information();
 
@@ -91,6 +94,17 @@ choice_enter:
         break;
 
     case 4:
+        printf("\n078BCTCD 1st semester project!\n");
+
+        printf("\n1. Goto main menu");
+        printf("\n2. Exit");
+        printf("\n-->");
+        scanf("%d", &choice);
+        if (choice == 1)
+            goto Main_Menu;
+        else if (choice == 2)
+            goto End;
+
         break;
     case 5:
         system("color 7");

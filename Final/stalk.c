@@ -74,13 +74,13 @@ void buy()
     stock_code_len = strlen(stock_code);
     count += stock_code_len;
     count++;
-    printf("Enter the price per share of stock you want to buy: ");
+    printf("Enter the price per share of stock you want to sell: ");
     scanf("%f", &buying_price);
     strcat(n2, stock_code);
 
-    printf("Please wait while price of %s falls to %.2f", stock_code, buying_price);
+    printf("Please wait while price of %s rises to %.2f", stock_code, buying_price);
 
-    while (price>buying_price)
+    while (price<buying_price)
     {
         system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
@@ -96,7 +96,7 @@ void buy()
                 fgets(n, count, fp);
                 if (strcmp(n, n2) == 0)
                 {
-                    printf("\nProcessing\n");
+                    printf("\nProcessing!\n");
                     // Finding the data
                     // Finding the symbol
                     Symbol:
@@ -154,7 +154,7 @@ void buy()
                 }
             }
         }
-        
+
         printf("\nNot Found!");
         goto EndLoop;
         goto here;
@@ -169,10 +169,12 @@ void buy()
         {
             fclose(fp);
         }
+        Sleep(10000);
     }
     EndLoop:
-    if (price<=buying_price)
+    if (price>=buying_price)
     {
+        printf("\nStock price has been reached! YAY!\n");
         notification_sound();
     }
 }
@@ -288,7 +290,7 @@ void sell()
                 }
             }
         }
-        
+
         printf("\nNot Found!");
         goto EndLoop;
         goto here;
@@ -303,10 +305,12 @@ void sell()
         {
             fclose(fp);
         }
+        Sleep(10000);
     }
     EndLoop:
     if (price>=selling_price)
     {
+        printf("\nStock price has been reached! YAY!\n");
         notification_sound();
     }
 }
