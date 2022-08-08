@@ -20,7 +20,7 @@ int menu()
     int main_exit;
 Main_Menu:
     system("cls");
-    printf("\t\t\t\t\xb2\xb2 Welcome to Stocker \xb2\xb2\n\n");
+    printf("\t\t\t\t\xb2\xb2 Welcome to Stock Tracker \xb2\xb2\n\n");
 choice_enter:
     printf("\n\n\n\t\t\t   \xB2\xB2\xB2\xB2\xB2\xB2\xB2 WELCOME TO THE MAIN MENU \xB2\xB2\xB2\xB2\xB2\xB2\xB2");
     // printf("\n\n\t\t1.Function1\n\t\t2.Function2\n\t\t3.Function3\n\t\t4.Function4\n\t\t5.Exit\n\n\n\n\n\t\t Enter your choice:");
@@ -28,8 +28,7 @@ choice_enter:
     printf("\n\t\t1. Name of All Stocks");
     printf("\n\t\t2. Stock Information");
     printf("\n\t\t3. Follow a stock");
-    printf("\n\t\t4. About Us");
-    printf("\n\t\t5. Exit");
+    printf("\n\t\t4. Exit");
     printf("\n\n\n\n\n\t\t Enter your choice: ");
     scanf("%d", &choice);
     system("cls");
@@ -93,20 +92,21 @@ choice_enter:
 
         break;
 
+    // case 4:
+    //     printf("\n078BCTCD 1st semester project!\n");
+
+    //     printf("\n1. Goto main menu");
+    //     printf("\n2. Exit");
+    //     printf("\n-->");
+    //     scanf("%d", &choice);
+    //     if (choice == 1)
+    //         goto Main_Menu;
+    //     else if (choice == 2)
+    //         goto End;
+
+    //     break;
+
     case 4:
-        printf("\n078BCTCD 1st semester project!\n");
-
-        printf("\n1. Goto main menu");
-        printf("\n2. Exit");
-        printf("\n-->");
-        scanf("%d", &choice);
-        if (choice == 1)
-            goto Main_Menu;
-        else if (choice == 2)
-            goto End;
-
-        break;
-    case 5:
         system("color 7");
         exit(1);
         break;
