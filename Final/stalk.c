@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 #include "notification_sound.c"
 
 void sell();
@@ -74,13 +75,13 @@ void buy()
     stock_code_len = strlen(stock_code);
     count += stock_code_len;
     count++;
-    printf("Enter the price per share of stock you want to sell: ");
+    printf("Enter the price per share of stock you want to buy: ");
     scanf("%f", &buying_price);
     strcat(n2, stock_code);
 
-    printf("Please wait while price of %s rises to %.2f", stock_code, buying_price);
+    printf("Please wait while price of %s falls to %.2f", stock_code, buying_price);
 
-    while (price<buying_price)
+    while (price>buying_price)
     {
         system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
@@ -172,7 +173,7 @@ void buy()
         Sleep(10000);
     }
     EndLoop:
-    if (price>=buying_price)
+    if (price<=buying_price)
     {
         printf("\nStock price has been reached! YAY!\n");
         notification_sound();
