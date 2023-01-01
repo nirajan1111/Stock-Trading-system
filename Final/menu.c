@@ -5,6 +5,7 @@
 #include "find_all_stock_name.c"
 #include "find_stock_information.c"
 #include "stalk.c"
+#include <curl/curl.h>
 
 int choice;
 
@@ -54,9 +55,9 @@ choice_enter:
         break;
 
     case 2:
-        system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
+        system("cd C:/StockTracker/Stock-Trading-system-main/Final");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
-        system("downloader_for_stock_information");
+        system("downloader_for_stock_information.exe");
         find_stock_information:
         find_stock_information();
 

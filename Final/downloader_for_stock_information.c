@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
-#include "C:\msys64\mingw64\include\curl\curl.h"
+#include <curl/curl.h>
 
 // Using curl to download the webpage
 
@@ -29,16 +29,6 @@ void main()
 
     // To see if the program opened sucessfully
     result = curl_easy_perform(curl);
-    // if (result == 1)
-    // {
-    //     printf("Download sucessful!\n");
-    // }
-    // else
-    // {
-    //     printf("ERROR: %s\n", curl_easy_strerror(result));
-    // }
-    // Here CURDLE_OK means the download is sucessful
-    // We can substitute CURDLE_OK by 1
 
     // Closing files and curl
     fclose(fp);

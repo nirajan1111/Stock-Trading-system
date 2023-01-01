@@ -1,8 +1,9 @@
+#include <winsock2.h>
 #include <windows.h>
 
 void notification_sound()
 {
-    float g3s = 207.652;
+    float g3s = 207.652;    
     float c4 = 261.626;
     float c4s = 277.183;
     float d4 = 293.665;

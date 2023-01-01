@@ -2,8 +2,10 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <winsock2.h>
 #include <windows.h>
 #include "notification_sound.c"
+#include <curl/curl.h>
 
 void sell();
 void buy();
@@ -83,9 +85,10 @@ void buy()
 
     while (price>buying_price)
     {
-        system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
+        
+        system("cd C:/StockTracker/Stock-Trading-system-main/Final");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
-        system("downloader_for_stock_information");
+        system("downloader_for_stock_information.exe");
         fp = fopen("hello.txt", "r");
 
         // Finding the stock symbol

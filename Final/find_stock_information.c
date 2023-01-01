@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+// Changing the
 void to_upper_case(char stock_code[])
 {
     int i=0;
@@ -16,6 +17,7 @@ void to_upper_case(char stock_code[])
     }
 }
 
+// Creating a structure for storing the data of the stock
 struct data
 {
     char symbol[10];
