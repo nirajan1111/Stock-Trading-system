@@ -23,10 +23,10 @@ void buy();
 //     }
 // }
 
-void stalk() 
+void stalk()
 {
     char ch;
-    Buy_Sell:
+Buy_Sell:
     printf("Do you want to buy/sell? (b/s): ");
     scanf(" %c", &ch);
     switch (ch)
@@ -40,7 +40,7 @@ void stalk()
     case 'S':
         sell();
         break;
-    
+
     default:
         break;
     }
@@ -60,7 +60,7 @@ void buy()
         char quantity[10];
         char pclose[10];
         char difference[10];
-    }d1;
+    } d1;
     char ch;
     char stock_code[10];
     float buying_price;
@@ -83,9 +83,9 @@ void buy()
 
     printf("Please wait while price of %s falls to %.2f", stock_code, buying_price);
 
-    while (price>buying_price)
+    do
     {
-        
+
         system("cd C:/StockTracker/Stock-Trading-system-main/Final");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
         system("downloader_for_stock_information.exe");
@@ -101,9 +101,9 @@ void buy()
                 if (strcmp(n, n2) == 0)
                 {
                     printf("\nProcessing!\n");
-                    // Finding the data
-                    // Finding the symbol
-                    Symbol:
+                // Finding the data
+                // Finding the symbol
+                Symbol:
                     while (ch != EOF)
                     {
                         ch = fgetc(fp);
@@ -125,8 +125,8 @@ void buy()
                             }
                         }
                     }
-                    // Finding the LTP
-                    LTP:
+                // Finding the LTP
+                LTP:
                     while (ch != EOF)
                     {
                         ch = fgetc(fp);
@@ -163,20 +163,20 @@ void buy()
         goto EndLoop;
         goto here;
 
-        // Printing the informations
-        there:
-        {
-            price = atof(d1.ltp);
-        }
-
-        here:
-        {
-            fclose(fp);
-        }
-        Sleep(10000);
+    // Printing the informations
+    there:
+    {
+        price = atof(d1.ltp);
     }
-    EndLoop:
-    if (price<=buying_price)
+
+    here:
+    {
+        fclose(fp);
+    }
+        Sleep(10000);
+    } while (price > buying_price);
+EndLoop:
+    if (price <= buying_price)
     {
         printf("\nStock price has been reached! YAY!\n");
         notification_sound();
@@ -197,7 +197,7 @@ void sell()
         char quantity[10];
         char pclose[10];
         char difference[10];
-    }d1;
+    } d1;
     char ch;
     char stock_code[10];
     float selling_price;
@@ -220,7 +220,7 @@ void sell()
 
     printf("Please wait while price of %s rises to %.2f", stock_code, selling_price);
 
-    while (price<selling_price)
+    do
     {
         system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
@@ -237,9 +237,9 @@ void sell()
                 if (strcmp(n, n2) == 0)
                 {
                     printf("\nProcessing!\n");
-                    // Finding the data
-                    // Finding the symbol
-                    Symbol:
+                // Finding the data
+                // Finding the symbol
+                Symbol:
                     while (ch != EOF)
                     {
                         ch = fgetc(fp);
@@ -261,8 +261,8 @@ void sell()
                             }
                         }
                     }
-                    // Finding the LTP
-                    LTP:
+                // Finding the LTP
+                LTP:
                     while (ch != EOF)
                     {
                         ch = fgetc(fp);
@@ -299,20 +299,20 @@ void sell()
         goto EndLoop;
         goto here;
 
-        // Printing the informations
-        there:
-        {
-            price = atof(d1.ltp);
-        }
-
-        here:
-        {
-            fclose(fp);
-        }
-        Sleep(10000);
+    // Printing the informations
+    there:
+    {
+        price = atof(d1.ltp);
     }
-    EndLoop:
-    if (price>=selling_price)
+
+    here:
+    {
+        fclose(fp);
+    }
+        Sleep(10000);
+    } while (price < selling_price);
+EndLoop:
+    if (price >= selling_price)
     {
         printf("\nStock price has been reached! YAY!\n");
         notification_sound();
