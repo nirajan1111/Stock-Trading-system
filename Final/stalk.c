@@ -10,19 +10,6 @@
 void sell();
 void buy();
 
-// void to_upper_case(char stock_code[])
-// {
-//     int i=0;
-//     while (stock_code[i]!='\0')
-//     {
-//         if (stock_code[i]>='a' && stock_code[i]<='z')
-//         {
-//             stock_code[i]-=32;
-//         }
-//         i++;
-//     }
-// }
-
 void stalk()
 {
     char ch;
@@ -217,14 +204,13 @@ void sell()
     printf("Enter the price per share of stock you want to sell: ");
     scanf("%f", &selling_price);
     strcat(n2, stock_code);
-
+    
     printf("Please wait while price of %s rises to %.2f", stock_code, selling_price);
-
     do
     {
-        system("cd C:/Users/Aakriti/Documents/Computer Engineering/1st SEMESTER/Subjects/C/Project/Final/");
+        system("cd C:/StockTracker/Stock-Trading-system-main/Final");
         system("gcc downloader_for_stock_information.c -lcurl -o downloader_for_stock_information.exe");
-        system("downloader_for_stock_information");
+        system("downloader_for_stock_information.exe");
         fp = fopen("hello.txt", "r");
 
         // Finding the stock symbol
